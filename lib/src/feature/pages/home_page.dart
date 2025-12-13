@@ -160,6 +160,43 @@ const Map<String, List<ProductModel>> DUMMY_PRODUCTS = {
 
 class OrderProvider extends ChangeNotifier {
   // Səbətdəki məhsullar
+
+
+OrderModel? _lastConfirmedOrder;
+  OrderModel? get lastConfirmedOrder => _lastConfirmedOrder;
+
+  // ... (digər sahələr) ...
+
+  // 🆕 Sifarişi API-yə göndərmə (Nümunə)
+  @override
+  Future<void> submitOrder() async {
+    final order = createOrder();
+    
+    // API çağırışı burada olacaq...
+    print('📦 Sifariş göndərilir...');
+    
+    // 🆕 Uğurlu olduqdan sonra son sifarişi saxla
+    _lastConfirmedOrder = order;
+
+    // Səbəti təmizləmək
+    _basketItems.clear();
+    _deliveryAddress = null;
+    _paymentInfo = null;
+    _customerNote = null;
+    notifyListeners();
+  }
+
+  // Səbəti təmizləmək
+  void clearBasket() {
+    // ... (digər sıfırlamalar) ...
+    _lastConfirmedOrder = null; // 🆕 Əlavə et
+    notifyListeners();
+  }
+
+
+
+
+
   final Map<String, BasketItem> _basketItems = {};
   
   // Çatdırılma və ödəniş məlumatları (gələcəkdə əlavə ediləcək)
@@ -268,33 +305,7 @@ class OrderProvider extends ChangeNotifier {
   }
 
   // 🆕 Sifarişi API-yə göndərmə (Nümunə)
-  Future<void> submitOrder() async {
-    final order = createOrder();
-    final orderJson = order.toJson();
-    
-    // API çağırışı burada olacaq
-    print('📦 Sifariş göndərilir:');
-    print(orderJson);
-    
-    // Nümunə: API çağırışı
-    // final response = await http.post(
-    //   Uri.parse('https://your-api.com/orders'),
-    //   headers: {'Content-Type': 'application/json'},
-    //   body: jsonEncode(orderJson),
-    // );
-    
-    // Səbəti təmizləmək
-    clearBasket();
-  }
 
-  // Səbəti təmizləmək
-  void clearBasket() {
-    _basketItems.clear();
-    _deliveryAddress = null;
-    _paymentInfo = null;
-    _customerNote = null;
-    notifyListeners();
-  }
 }
 
 // =============================================================================

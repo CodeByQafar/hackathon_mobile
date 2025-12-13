@@ -41,6 +41,12 @@ void main() async {
            ChangeNotifierProvider(   create: (_) => OrderProvider()),
 
         ChangeNotifierProvider(create: (_) => ReservationProvider()),
+     
+        
+        // 2. Tarix, Saat və Masa seçimini idarə edir
+        ChangeNotifierProvider(
+          create: (_) => ReservationProvider(),
+        ),
         ],
         child: const MainApp(),
       ),

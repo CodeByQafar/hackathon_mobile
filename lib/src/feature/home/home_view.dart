@@ -20,7 +20,7 @@ class _HomeViewState extends State<HomeView> {
 
   final List<Widget> _pages = const [
     HomePage(),
-    OrderSummaryPage(),
+    SecondPage(),
     ReservationPage(),
 
     SettingView(),
