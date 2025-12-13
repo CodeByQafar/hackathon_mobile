@@ -1,0 +1,94 @@
+name: hackathon_mobile
+description: "hackathon_mobile"
+
+publish_to: 'none' 
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  #localization
+  easy_localization: ^3.0.8
+  
+  #service  
+  dio: ^5.8.0+1
+ 
+  #functionality
+  pinput: ^6.0.1
+
+  #cache
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  #theme
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.1.6
+  flutter_native_splash: ^2.4.6
+  country_flags: ^4.1.0
+  carbon_icons: ^0.0.1+2
+  akar_icons_flutter: ^1.1.21
+  flutter_iconly: ^1.0.2 
+
+  #state management
+  provider: ^6.1.5+1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+  build_runner:
+  flutter_gen_runner:
+
+flutter_native_splash:
+  color: "#1592e6"
+  image: assets/images/app_icon_backgoundles.png
+  android: true
+  ios: true
+  web: false
+
+flutter:
+
+
+  uses-material-design: true
+  assets:
+
+    - assets/images/
+    - assets/fonts/
+    - assets/lang/
+    - assets/icons/
+
+     #icons
+    - assets/icons/facebook_icon.svg
+    - assets/icons/google_icon.svg
+    - assets/icons/apple_icon.svg
+    - assets/icons/x_icon.svg
+    # - assets/languages/
+ 
+  fonts:
+
+    - family: SmoochSans
+      fonts:
+        - asset: assets/fonts/SmoochSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/SmoochSans-Bold.ttf
+          weight: 700
+            
+    - family: Agency Fb
+      fonts:
+        - asset: assets/fonts/Agency-Fb-Regular.ttf
+          weight: 700
+    
+    - family: BebasNeue
+      fonts:
+        - asset: assets/fonts/BebasNeue-Regular.ttf
+          weight: 400
