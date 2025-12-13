@@ -66,7 +66,7 @@ class MainApp extends StatelessWidget {
       darkTheme: AppTheme().darkTheme,
       theme: AppTheme().lightTheme,
       themeMode: settingsViewModel.themeMode,
-      home: HomeView(),
+      home: SplashView(),
       title: "Hackathon Mobile",
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,

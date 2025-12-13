@@ -211,8 +211,8 @@ class _SignInViewState extends State<SignInView> with NavigatornMixinStateful {
                                 },
                               ),
 
-                              DividerText(text: 'auth.sign_in_with'.tr()),
-                              SignWidthIcons(),
+                              // DividerText(text: 'auth.sign_in_with'.tr()),
+                              // SignWidthIcons(),
 
                               TextWidthButton(
                                 text: 'auth.dont_have_account'.tr(),
