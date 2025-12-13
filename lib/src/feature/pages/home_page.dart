@@ -173,7 +173,7 @@ OrderModel? _lastConfirmedOrder;
     final order = createOrder();
     
     // API çağırışı burada olacaq...
-    print('📦 Sifariş göndərilir...');
+    print('Order sended...');
     
     // 🆕 Uğurlu olduqdan sonra son sifarişi saxla
     _lastConfirmedOrder = order;
@@ -706,7 +706,7 @@ class BasketPage extends StatelessWidget {
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('✅ Sifariş uğurla yaradıldı!'),
+                          content: Text('Order created sucsefully'),
                           backgroundColor: Colors.green,
                         ),
                       );

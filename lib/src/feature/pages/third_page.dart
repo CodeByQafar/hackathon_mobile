@@ -45,6 +45,47 @@ class ReservationModel {
 // =============================================================================
 
 class ReservationProvider extends ChangeNotifier {
+
+
+
+ReservationModel? _lastConfirmedReservation;
+  ReservationModel? get lastConfirmedReservation => _lastConfirmedReservation;
+
+  // ... (digər sahələr) ...
+
+  // Rezervasiyanı təsdiqlə və API-yə göndər
+  @override
+  Future<void> submitReservation() async {
+    if (!isComplete) return;
+
+    final reservation = createReservation()!;
+    
+    // API çağırışı
+    debugPrint('📅 Rezervasiya göndərilir...');
+
+    await Future.delayed(const Duration(milliseconds: 500));
+    
+    // 🆕 Uğurlu olduqdan sonra son rezervasiyanı saxla
+    _lastConfirmedReservation = reservation; 
+
+    // Əlavə məlumatları sıfırla, amma son nəticəni saxla
+    _selectedDate = null;
+    _selectedTime = null;
+    _selectedTable = null;
+    _customerName = null;
+    _phoneNumber = null;
+    _numberOfGuests = null;
+    notifyListeners();
+  }
+
+  // Qeyd: clearReservation() metodu bu yeni sahəni də sıfırlamalıdır,
+  // əgər istifadəçi onu tamamilə ləğv etmək istəsə.
+  void clearReservation() {
+    // ... (digər sıfırlamalar) ...
+    _lastConfirmedReservation = null; // 🆕 Əlavə et
+    notifyListeners();
+  }
+
   DateTime? _selectedDate;
   TimeOfDay? _selectedTime;
   int? _selectedTable;
@@ -115,39 +156,7 @@ class ReservationProvider extends ChangeNotifier {
   }
 
   // Rezervasiyanı təsdiqlə və API-yə göndər
-  Future<void> submitReservation() async {
-    if (!isComplete) return;
-
-    final reservation = createReservation()!;
-    
-    // API çağırışı
-    debugPrint('📅 Rezervasiya göndərilir:');
-    debugPrint('JSON: ${reservation.toJson()}');
-    debugPrint('Model: $reservation');
-    
-    // Simulyasiya: API çağırışı
-    // final response = await http.post(
-    //   Uri.parse('https://your-api.com/reservations'),
-    //   headers: {'Content-Type': 'application/json'},
-    //   body: jsonEncode(reservation.toJson()),
-    // );
-    
-    await Future.delayed(const Duration(milliseconds: 500));
-    
-    // Uğurlu olduqdan sonra sıfırla
-    clearReservation();
-  }
-
-  // Sıfırla
-  void clearReservation() {
-    _selectedDate = null;
-    _selectedTime = null;
-    _selectedTable = null;
-    _customerName = null;
-    _phoneNumber = null;
-    _numberOfGuests = null;
-    notifyListeners();
-  }
+  
 }
 
 // =============================================================================
@@ -206,7 +215,7 @@ class ReservationPage extends StatelessWidget {
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('✅ Rezervasiya uğurla yaradıldı!'),
+          content: Text('Reservation created sucsefully!'),
           backgroundColor: Colors.green,
           duration: Duration(seconds: 2),
         ),
