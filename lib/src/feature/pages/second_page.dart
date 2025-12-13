@@ -151,8 +151,9 @@ color: theme.textTheme.displaySmall!.color,
     // 2. Məlumat olduqda Card-ı göstər
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Your Status"),
+        title:  Text("Your Status" ,style: Theme.of( context).textTheme.titleMedium),
         centerTitle: true,
+      
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),

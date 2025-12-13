@@ -1,29 +1,31 @@
 {
   "welcome_screen": {
     "title": "Hoş geldiniz",
-    "subtitle": "Hesabınız hakkındaki kişisel bilgileri girin"
+    "subtitle": "Kişisel hesabınıza ait bilgileri girin"
   },
   "auth": {
     "back": "Geri",
     "sign_in_title": "Hoş geldiniz",
     "sign_up_title": "Başla",
     "full_name_hint": "Tam adınızı girin",
-    "email_hint": "Email girin",
+    "email_hint": "E-posta girin",
     "password_hint": "Şifrenizi girin",
     "personal_data_usage": "Kişisel verilerin işlenmesini kabul ediyorum",
     "remember_me": "Beni hatırla",
     "forgot_password": "Şifrenizi mi unuttunuz?",
-    "sign_in_with": "Şununla giriş yap",
-    "sign_up_with": "Şununla kayıt ol",
+    "sign_in_with": "İle Giriş Yap",
+    "sign_up_with": "İle Kayıt Ol",
     "already_have_account": "Zaten bir hesabınız var mı?",
     "dont_have_account": "Hesabınız yok mu?",
-    "forgot_password_subtitle": "Sıfırlama linki almak için emailinizi girin",
+    "forgot_password_subtitle": "Sıfırlama bağlantısı almak için e-postanızı girin",
     "verify_code_title": "Doğrulama Kodu",
-    "verify_code_subtitle": "Email ile gönderilen 4 haneli kodu girin",
+    "verify_code_subtitle": "E-postanıza gönderilen 4 haneli kodu girin",
+    "sign_up_failed": "Kayıt Başarısız Oldu",
+    "sign_in_failed": "Giriş Başarısız Oldu",
     "errors": {
       "full_name_empty": "Tam ad boş bırakılamaz",
-      "email_empty": "Email boş bırakılamaz",
-      "email_invalid": "Geçersiz email formatı",
+      "email_empty": "E-posta boş bırakılamaz",
+      "email_invalid": "Geçersiz e-posta formatı",
       "password_empty": "Şifre boş bırakılamaz",
       "password_short": "Şifre en az 8 karakter olmalıdır",
       "pin_empty": "Kod boş bırakılamaz",
@@ -33,21 +35,51 @@
   "buttons": {
     "sign_up": "Kayıt Ol",
     "sign_in": "Giriş Yap",
-    "send_reset_link": "Sıfırlama linki gönder",
+    "send_reset_link": "Sıfırlama Bağlantısı Gönder",
     "verify_code": "Doğrula",
     "verify_success": "PIN doğru girildi",
     "verify_fail": "Kod geçersiz",
     "cancel": "İptal",
-    "logout": "Çıkış"
+    "logout": "Çıkış Yap"
   },
   "settings": {
-    "select_language": "Dili seçin",
+    "select_language": "Dil Seçin",
     "settings_title": "Ayarlar",
     "edit_profile": "Profili Düzenle",
     "language": "Dil",
     "theme": "Tema",
-    "logout": "Çıkış",
+    "logout": "Çıkış Yap",
     "logout_title": "Emin misiniz?",
-    "logout_message": "Hesabınızdan çıkmak istediğinize emin misiniz?"
+    "logout_message": "Hesabınızdan çıkış yapmak istediğinizden emin misiniz?"
+  },
+  "reservation": {
+    "title": "Rezervasyon",
+    "select_date": "Tarih Seçin",
+    "choose_day": "Gün Seçin",
+    "select_time": "Saat Seçin",
+    "select_date_first": "Önce tarih seçin",
+    "select_table": "Masa Seçin",
+    "confirm_reservation": "Rezervasyonu Onayla",
+    "success_message": "Rezervasyon başarıyla oluşturuldu!"
+  },
+  "order_status": {
+    "title": "Durumunuz",
+    "latest_reservation": "Son Rezervasyon",
+    "latest_order": "Son Sipariş",
+    "detail_date": "Tarih:",
+    "detail_time": "Saat:",
+    "detail_table": "Masa:",
+    "detail_guests": "Misafirler:",
+    "detail_order_id": "Sipariş ID:",
+    "detail_total_items": "Toplam Öğe:",
+    "detail_total_price": "Toplam Fiyat:",
+    "detail_status": "Durum:",
+    "detail_items_list": "Öğeler ({count}):",
+    "no_data_title": "Aktif sipariş veya rezervasyon bulunmamaktadır.",
+    "no_data_subtitle": "Lütfen önce bir sipariş veya rezervasyon oluşturun."
+  },
+  "basket": {
+    "items_count": "{count} öğe",
+    "add_to_basket": "Sepete Ekle"
   }
 }

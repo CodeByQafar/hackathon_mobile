@@ -1,11 +1,11 @@
 {
   "welcome_screen": {
-    "title": "Xoş geldiniz",
-    "subtitle": "Hesabınız haqqındakı məlumatları daxil edin"
+    "title": "Xoş gəlmisiniz",
+    "subtitle": "Şəxsi hesabınıza daxil olmaq üçün məlumatları daxil edin"
   },
   "auth": {
     "back": "Geri",
-    "sign_in_title": "Xoş gəldiniz",
+    "sign_in_title": "Xoş gəlmisiniz",
     "sign_up_title": "Başlayaq",
     "full_name_hint": "Tam adı daxil edin",
     "email_hint": "Email daxil edin",
@@ -13,13 +13,15 @@
     "personal_data_usage": "Şəxsi məlumatların işlənməsinə razıyam",
     "remember_me": "Məni xatırla",
     "forgot_password": "Şifrənizi unutmusunuz?",
-    "sign_in_with": "Bu ilə daxil ol",
-    "sign_up_with": "Bu ilə qeydiyyat",
-    "already_have_account": "Hesabınız var?",
+    "sign_in_with": "İlə daxil ol",
+    "sign_up_with": "İlə qeydiyyat",
+    "already_have_account": "Artıq hesabınız var?",
     "dont_have_account": "Hesabınız yoxdur?",
     "forgot_password_subtitle": "Sıfırlama linki almaq üçün emailinizi daxil edin",
     "verify_code_title": "Təsdiqləmə kodu",
     "verify_code_subtitle": "Email ilə göndərilən 4 rəqəmli kodu daxil edin",
+    "sign_up_failed": "Qeydiyyat alınmadı",
+    "sign_in_failed": "Daxil olmaq alınmadı",
     "errors": {
       "full_name_empty": "Tam ad boş ola bilməz",
       "email_empty": "Email boş ola bilməz",
@@ -27,7 +29,7 @@
       "password_empty": "Şifrə boş ola bilməz",
       "password_short": "Şifrə ən az 8 simvol olmalıdır",
       "pin_empty": "Kod boş ola bilməz",
-      "pin_invalid": "Daxil etdiyiniz kod düzgün deyil"
+      "pin_invalid": "Daxil edilən kod düzgün deyil"
     }
   },
   "buttons": {
@@ -37,7 +39,7 @@
     "verify_code": "Təsdiqlə",
     "verify_success": "PIN düzgün daxil edildi",
     "verify_fail": "Kod səhvdir",
-    "cancel": "İmtina",
+    "cancel": "Ləğv et",
     "logout": "Çıxış"
   },
   "settings": {
@@ -49,5 +51,35 @@
     "logout": "Çıxış",
     "logout_title": "Əminsiniz?",
     "logout_message": "Hesabınızdan çıxmaq istədiyinizə əminsiniz?"
+  },
+  "reservation": {
+    "title": "Rezervasiya",
+    "select_date": "Tarixi seçin",
+    "choose_day": "Günü seçin",
+    "select_time": "Vaxtı seçin",
+    "select_date_first": "Əvvəlcə tarixi seçin",
+    "select_table": "Masası seçin",
+    "confirm_reservation": "Rezervasiyanı təsdiqlə",
+    "success_message": "Rezervasiya uğurla yaradıldı!"
+  },
+  "order_status": {
+    "title": "Sizin Statusunuz",
+    "latest_reservation": "Son Rezervasiya",
+    "latest_order": "Son Sifariş",
+    "detail_date": "Tarix:",
+    "detail_time": "Vaxt:",
+    "detail_table": "Masa:",
+    "detail_guests": "Qonaqlar:",
+    "detail_order_id": "Sifariş ID:",
+    "detail_total_items": "Cəmi Məhsul:",
+    "detail_total_price": "Ümumi Qiymət:",
+    "detail_status": "Status:",
+    "detail_items_list": "Məhsullar ({count}):",
+    "no_data_title": "Aktiv sifariş və ya rezervasiya yoxdur.",
+    "no_data_subtitle": "Zəhmət olmasa, əvvəlcə sifariş və ya rezervasiya yaradın."
+  },
+  "basket": {
+    "items_count": "{count} məhsul",
+    "add_to_basket": "Səbətə əlavə et"
   }
 }

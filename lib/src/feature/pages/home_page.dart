@@ -706,7 +706,7 @@ class BasketPage extends StatelessWidget {
                     if (context.mounted) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
-                          content: Text('Order created sucsefully'),
+                          content: Text('Order created'),
                           backgroundColor: Colors.green,
                         ),
                       );

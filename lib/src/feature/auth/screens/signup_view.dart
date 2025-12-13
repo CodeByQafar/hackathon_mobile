@@ -102,9 +102,9 @@ class _SignUpViewState extends State<SignUpView> with NavigatornMixinStateful {
                                   if (value == null || value.isEmpty) {
                                     return "auth.errors.email_empty".tr();
                                   }
-                                  if (!value.isValidEmail) {
-                                    return "auth.errors.email_invalid".tr();
-                                  }
+                                  // if (!value.isValidEmail) {
+                                  //   return "auth.errors.email_invalid".tr();
+                                  // }
                                   return null;
                                 },
                               ),

@@ -51,5 +51,35 @@
     "logout": "Logout",
     "logout_title": "Are you sure?",
     "logout_message": "Do you really want to log out of your account?"
+  },
+  "reservation": {
+    "title": "Reservation",
+    "select_date": "Select Date",
+    "choose_day": "Choose day",
+    "select_time": "Select Time",
+    "select_date_first": "Select date first",
+    "select_table": "Select Table",
+    "confirm_reservation": "Confirm Reservation",
+    "success_message": "Reservation created sucsefully!"
+  },
+  "order_status": {
+    "title": "Your Status",
+    "latest_reservation": "Latest Reservation",
+    "latest_order": "Latest Order",
+    "detail_date": "Date:",
+    "detail_time": "Time:",
+    "detail_table": "Table:",
+    "detail_guests": "Guests:",
+    "detail_order_id": "Order ID:",
+    "detail_total_items": "Total Items:",
+    "detail_total_price": "Total Price:",
+    "detail_status": "Status:",
+    "detail_items_list": "Items ({count}):",
+    "no_data_title": "No active orders or reservations.",
+    "no_data_subtitle": "Please create an order or reservation first."
+  },
+  "basket": {
+    "items_count": "{count} items",
+    "add_to_basket": "Add to Basket"
   }
 }

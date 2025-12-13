@@ -13,7 +13,7 @@ class AuthService {
 
   
 Future<dynamic> signIn(SignInModel model) async {
-  final url = Uri.parse('$baseUrl/api/Authentication/Login');
+  final url = Uri.parse('$baseUrl/api/Auth/Login');
 
   try {
     final response = await http.post(
@@ -55,7 +55,7 @@ Future<dynamic> signIn(SignInModel model) async {
 }
 
 Future<dynamic> signUp(SignUpModel model) async {
-  final url = Uri.parse('$baseUrl/api/Authentication/Register');
+  final url = Uri.parse('$baseUrl/api/Auth/Register');
 
   try {
     final response = await http.post(
@@ -76,7 +76,7 @@ Future<dynamic> signUp(SignUpModel model) async {
     if (response.statusCode >= 200 && response.statusCode < 300 && json != null && json['success'] == true) {
       // Avtomatik sign in
       dynamic signInResult = await signIn(
-        SignInModel(userNameOrEmail: model.email, password: model.password),
+        SignInModel(userNameOrEmail: model.userName, password: model.password),
       );
       if (signInResult is SignInResponse) {
         return signInResult; // Success

@@ -9,7 +9,7 @@ import '../model/sign up/sign_up_error_model.dart';
 import '../service/auth_service.dart';
 class AuthViewModel extends ChangeNotifier {
   final AuthService authService =
-      AuthService(baseUrl: "http://hospitalmanage.runasp.net");
+      AuthService(baseUrl: "http://cafemangementaapi.runasp.net");
 
   bool isLoading = false;
 
