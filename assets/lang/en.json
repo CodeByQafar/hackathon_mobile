@@ -1,0 +1,55 @@
+{
+  "welcome_screen": {
+    "title": "Welcome",
+    "subtitle": "Enter personal details to your personal account"
+  },
+  "auth": {
+    "back": "Back",
+    "sign_in_title": "Welcome",
+    "sign_up_title": "Get Started",
+    "full_name_hint": "Enter Full Name",
+    "email_hint": "Enter Email",
+    "password_hint": "Enter Password",
+    "personal_data_usage": "I agree to the processing of personal data",
+    "remember_me": "Remember me",
+    "forgot_password": "Forgot password?",
+    "sign_in_with": "Sign In with",
+    "sign_up_with": "Sign Up with",
+    "already_have_account": "Already have an account?",
+    "dont_have_account": "Don't have an account?",
+    "forgot_password_subtitle": "Enter your email to receive a reset link",
+    "verify_code_title": "Verification Code",
+    "verify_code_subtitle": "Enter the 4-digit code sent to your email",
+    "sign_up_failed": "Sign Up Failed",
+    "sign_in_failed": "Sign In Failed",
+    "errors": {
+      "full_name_empty": "Full name cannot be empty",
+      "email_empty": "Email cannot be empty",
+      "email_invalid": "Invalid email format",
+      "password_empty": "Password cannot be empty",
+      "password_short": "Password must be at least 8 characters",
+      "pin_empty": "Code cannot be empty",
+      "pin_invalid": "Invalid code entered"
+    }
+  },
+  "buttons": {
+    "sign_up": "Sign Up",
+    "sign_in": "Sign In",
+    "send_reset_link": "Send Reset Link",
+    "verify_code": "Verify",
+    "verify_success": "PIN entered correctly",
+    "verify_fail": "Invalid code",
+    "cancel": "Cancel",
+    "logout": "Logout"
+  },
+  "settings": {
+    "select_language": "Select Language",
+    "settings_title": "Settings",
+    "edit_profile": "Edit Profile",
+    "language": "Language",
+    "theme": "Theme",
+    "logout": "Logout",
+    "logout_title": "Are you sure?",
+    "logout_message": "Do you really want to log out of your account?"
+  }
+}

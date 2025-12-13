@@ -1,0 +1,53 @@
+{
+  "welcome_screen": {
+    "title": "Xoş geldiniz",
+    "subtitle": "Hesabınız haqqındakı məlumatları daxil edin"
+  },
+  "auth": {
+    "back": "Geri",
+    "sign_in_title": "Xoş gəldiniz",
+    "sign_up_title": "Başlayaq",
+    "full_name_hint": "Tam adı daxil edin",
+    "email_hint": "Email daxil edin",
+    "password_hint": "Şifrə daxil edin",
+    "personal_data_usage": "Şəxsi məlumatların işlənməsinə razıyam",
+    "remember_me": "Məni xatırla",
+    "forgot_password": "Şifrənizi unutmusunuz?",
+    "sign_in_with": "Bu ilə daxil ol",
+    "sign_up_with": "Bu ilə qeydiyyat",
+    "already_have_account": "Hesabınız var?",
+    "dont_have_account": "Hesabınız yoxdur?",
+    "forgot_password_subtitle": "Sıfırlama linki almaq üçün emailinizi daxil edin",
+    "verify_code_title": "Təsdiqləmə kodu",
+    "verify_code_subtitle": "Email ilə göndərilən 4 rəqəmli kodu daxil edin",
+    "errors": {
+      "full_name_empty": "Tam ad boş ola bilməz",
+      "email_empty": "Email boş ola bilməz",
+      "email_invalid": "Email formatı düzgün deyil",
+      "password_empty": "Şifrə boş ola bilməz",
+      "password_short": "Şifrə ən az 8 simvol olmalıdır",
+      "pin_empty": "Kod boş ola bilməz",
+      "pin_invalid": "Daxil etdiyiniz kod düzgün deyil"
+    }
+  },
+  "buttons": {
+    "sign_up": "Qeydiyyat",
+    "sign_in": "Daxil ol",
+    "send_reset_link": "Sıfırlama linki göndər",
+    "verify_code": "Təsdiqlə",
+    "verify_success": "PIN düzgün daxil edildi",
+    "verify_fail": "Kod səhvdir",
+    "cancel": "İmtina",
+    "logout": "Çıxış"
+  },
+  "settings": {
+    "select_language": "Dili seçin",
+    "settings_title": "Parametrlər",
+    "edit_profile": "Profili redaktə et",
+    "language": "Dil",
+    "theme": "Tema",
+    "logout": "Çıxış",
+    "logout_title": "Əminsiniz?",
+    "logout_message": "Hesabınızdan çıxmaq istədiyinizə əminsiniz?"
+  }
+}
