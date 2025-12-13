@@ -12,6 +12,8 @@ import 'src/core/init/theme/theme.dart';
 import 'src/core/navigation/navigation_manager.dart';
 import 'src/feature/auth/view model/auth_view_model.dart';
 import 'src/feature/auth/view model/verify_code_view_model.dart';
+import 'src/feature/pages/home_page.dart';
+import 'src/feature/pages/third_page.dart';
 import 'src/feature/setting/view model/settings_view_model.dart';
 import 'src/feature/splash/splash_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -21,7 +23,7 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   await Hive.initFlutter();
   await CacheService.instance.init();
- await GlobalUserCache.loadFromCache();
+  await GlobalUserCache.loadFromCache();
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.manual,
     overlays: [SystemUiOverlay.top],
@@ -36,6 +38,9 @@ void main() async {
           ChangeNotifierProvider(create: (_) => VerifyCodeViewModel()),
           ChangeNotifierProvider(create: (_) => SettingsViewModel()),
           ChangeNotifierProvider(create: (_) => AuthViewModel()),
+           ChangeNotifierProvider(   create: (_) => OrderProvider()),
+
+        ChangeNotifierProvider(create: (_) => ReservationProvider()),
         ],
         child: const MainApp(),
       ),
@@ -55,7 +60,7 @@ class MainApp extends StatelessWidget {
       darkTheme: AppTheme().darkTheme,
       theme: AppTheme().lightTheme,
       themeMode: settingsViewModel.themeMode,
-      home: SplashView(),
+      home: HomeView(),
       title: "Hackathon Mobile",
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,

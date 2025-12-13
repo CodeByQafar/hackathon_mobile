@@ -5,17 +5,17 @@ class AppColors {
 
   // Primary
   static const MaterialColor cyanBlueAzure =
-      MaterialColor(0xff1592e6, <int, Color>{
-        50: Color(0xff1592e6),
-        100: Color(0xff1592e6),
-        200: Color(0xff1592e6),
-        300: Color(0xff1592e6),
-        400: Color(0xff1592e6),
-        500: Color(0xff1592e6),
-        600: Color(0xff1592e6),
-        700: Color(0xff1592e6),
-        800: Color(0xff1592e6),
-        900: Color(0xff1592e6),
+      MaterialColor(0xffec1d25, <int, Color>{
+        50: Color(0xffec1d25),
+        100: Color(0xffec1d25),
+        200: Color(0xffec1d25),
+        300: Color(0xffec1d25),
+        400: Color(0xffec1d25),
+        500: Color(0xffec1d25),
+        600: Color(0xffec1d25),
+        700: Color(0xffec1d25),
+        800: Color(0xffec1d25),
+        900: Color(0xffec1d25),
       });
 
   static const Color quickSilver = MaterialColor(0xffA5A5A5, <int, Color>{
@@ -53,7 +53,7 @@ class AppColors {
   static const Color darkHover = Color(0xff1E1E1E);
 
   /// Accent
-  static const Color darkAccent = Color(0xff1592e6);
+  static const Color darkAccent = Color(0xffec1d25);
 
   /// Icons
   static const Color darkIcon = Color(0xffEDEDED);

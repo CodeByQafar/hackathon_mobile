@@ -20,8 +20,8 @@ class _HomeViewState extends State<HomeView> {
 
   final List<Widget> _pages = const [
     HomePage(),
-    SecondPage(),
-    ThirdPage(),
+    OrderSummaryPage(),
+    ReservationPage(),
 
     SettingView(),
   ];
@@ -29,11 +29,12 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        centerTitle: true,
-        automaticallyImplyLeading: false,
-      ),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.red,
+      //   centerTitle: true,
+      //   automaticallyImplyLeading: false,
+      // ),
 
       body: _pages[_currentIndex],
 
@@ -47,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
         type: BottomNavigationBarType.fixed,
 
         items: const [
-          BottomNavigationBarItem(icon: Icon(AkarIcons.home), label: ""),
+          BottomNavigationBarItem(icon: Icon(AkarIcons.basket), label: ""),
           BottomNavigationBarItem(icon: Icon(IconlyLight.profile), label: ""),
 
           BottomNavigationBarItem(
