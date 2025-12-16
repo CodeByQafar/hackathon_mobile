@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-// =============================================================================
-// RESERVATION MODEL
-// =============================================================================
-
 class ReservationModel {
   final DateTime date;
   final TimeOfDay time;
@@ -22,11 +18,12 @@ class ReservationModel {
     this.numberOfGuests,
   });
 
-  // API üçün JSON formatına çevir
   Map<String, dynamic> toJson() {
     return {
-      'date': '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}',
-      'time': '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}',
+      'date':
+          '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}',
+      'time':
+          '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}',
       'table_number': tableNumber,
       'customer_name': customerName,
       'phone_number': phoneNumber,
@@ -40,35 +37,22 @@ class ReservationModel {
   }
 }
 
-// =============================================================================
-// RESERVATION PROVIDER
-// =============================================================================
-
 class ReservationProvider extends ChangeNotifier {
-
-
-
-ReservationModel? _lastConfirmedReservation;
+  ReservationModel? _lastConfirmedReservation;
   ReservationModel? get lastConfirmedReservation => _lastConfirmedReservation;
 
-  // ... (digər sahələr) ...
-
-  // Rezervasiyanı təsdiqlə və API-yə göndər
   @override
   Future<void> submitReservation() async {
     if (!isComplete) return;
 
     final reservation = createReservation()!;
-    
-    // API çağırışı
+
     debugPrint('📅 Rezervasiya göndərilir...');
 
     await Future.delayed(const Duration(milliseconds: 500));
-    
-    // 🆕 Uğurlu olduqdan sonra son rezervasiyanı saxla
-    _lastConfirmedReservation = reservation; 
 
-    // Əlavə məlumatları sıfırla, amma son nəticəni saxla
+    _lastConfirmedReservation = reservation;
+
     _selectedDate = null;
     _selectedTime = null;
     _selectedTable = null;
@@ -78,11 +62,8 @@ ReservationModel? _lastConfirmedReservation;
     notifyListeners();
   }
 
-  // Qeyd: clearReservation() metodu bu yeni sahəni də sıfırlamalıdır,
-  // əgər istifadəçi onu tamamilə ləğv etmək istəsə.
   void clearReservation() {
-    // ... (digər sıfırlamalar) ...
-    _lastConfirmedReservation = null; // 🆕 Əlavə et
+    _lastConfirmedReservation = null;
     notifyListeners();
   }
 
@@ -100,32 +81,25 @@ ReservationModel? _lastConfirmedReservation;
   String? get phoneNumber => _phoneNumber;
   int? get numberOfGuests => _numberOfGuests;
 
-  // Bütün məlumatlar seçilib?
-  bool get isComplete => 
-      _selectedDate != null && 
-      _selectedTime != null && 
-      _selectedTable != null;
+  bool get isComplete =>
+      _selectedDate != null && _selectedTime != null && _selectedTable != null;
 
-  // Tarix seç
   void selectDate(DateTime date) {
     _selectedDate = date;
-    _selectedTime = null; // Tarix dəyişəndə saatı sıfırla
+    _selectedTime = null;
     notifyListeners();
   }
 
-  // Saat seç
   void selectTime(TimeOfDay time) {
     _selectedTime = time;
     notifyListeners();
   }
 
-  // Masa seç
   void selectTable(int table) {
     _selectedTable = table;
     notifyListeners();
   }
 
-  // Müştəri məlumatlarını əlavə et
   void setCustomerName(String name) {
     _customerName = name;
     notifyListeners();
@@ -141,10 +115,9 @@ ReservationModel? _lastConfirmedReservation;
     notifyListeners();
   }
 
-  // Rezervasiya modelini yarat
   ReservationModel? createReservation() {
     if (!isComplete) return null;
-    
+
     return ReservationModel(
       date: _selectedDate!,
       time: _selectedTime!,
@@ -154,14 +127,7 @@ ReservationModel? _lastConfirmedReservation;
       numberOfGuests: _numberOfGuests,
     );
   }
-
-  // Rezervasiyanı təsdiqlə və API-yə göndər
-  
 }
-
-// =============================================================================
-// RESERVATION PAGE
-// =============================================================================
 
 class ReservationPage extends StatelessWidget {
   const ReservationPage({super.key});
@@ -177,10 +143,7 @@ class ReservationPage extends StatelessWidget {
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime.now().add(const Duration(days: 30)),
-      builder: (context, child) => Theme(
-        data: theme,
-        child: child!,
-      ),
+      builder: (context, child) => Theme(data: theme, child: child!),
     );
 
     if (date != null) {
@@ -195,10 +158,7 @@ class ReservationPage extends StatelessWidget {
     final time = await showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
-      builder: (context, child) => Theme(
-        data: theme,
-        child: child!,
-      ),
+      builder: (context, child) => Theme(data: theme, child: child!),
     );
 
     if (time != null) {
@@ -208,8 +168,7 @@ class ReservationPage extends StatelessWidget {
 
   Future<void> _confirmReservation(BuildContext context) async {
     final provider = context.read<ReservationProvider>();
-    
-    // Rezervasiyanı təsdiqlə və API-yə göndər
+
     await provider.submitReservation();
 
     if (context.mounted) {
@@ -220,7 +179,6 @@ class ReservationPage extends StatelessWidget {
           duration: Duration(seconds: 2),
         ),
       );
-
     }
   }
 
@@ -239,7 +197,6 @@ class ReservationPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// DATE
             Text('Select Date', style: theme.textTheme.bodyLarge),
             const SizedBox(height: 8),
             GestureDetector(
@@ -253,15 +210,11 @@ class ReservationPage extends StatelessWidget {
 
             const SizedBox(height: 16),
 
-            /// TIME
             Text('Select Time', style: theme.textTheme.bodyLarge),
             const SizedBox(height: 8),
-            
+
             if (provider.selectedDate == null)
-              Opacity(
-                opacity: 0.5,
-                child: _Box(text: 'Select date first'),
-              )
+              Opacity(opacity: 0.5, child: _Box(text: 'Select date first'))
             else
               GestureDetector(
                 onTap: () => _pickTime(context),
@@ -274,7 +227,6 @@ class ReservationPage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            /// TABLE
             Text('Select Table', style: theme.textTheme.bodyLarge),
             const SizedBox(height: 8),
 
@@ -316,14 +268,14 @@ class ReservationPage extends StatelessWidget {
 
             const Spacer(),
 
-            /// CONFIRM BUTTON
             SizedBox(
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: theme.colorScheme.primary,
-                  disabledBackgroundColor: theme.colorScheme.surfaceContainerHighest,
+                  disabledBackgroundColor:
+                      theme.colorScheme.surfaceContainerHighest,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -348,7 +300,6 @@ class ReservationPage extends StatelessWidget {
   }
 }
 
-/// Reusable themed box
 class _Box extends StatelessWidget {
   final String text;
 
@@ -366,10 +317,7 @@ class _Box extends StatelessWidget {
         border: Border.all(color: theme.dividerColor),
         color: theme.cardColor,
       ),
-      child: Text(
-        text,
-        style: theme.textTheme.bodyMedium,
-      ),
+      child: Text(text, style: theme.textTheme.bodyMedium),
     );
   }
 }

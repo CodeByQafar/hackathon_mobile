@@ -38,16 +38,8 @@ void main() async {
           ChangeNotifierProvider(create: (_) => VerifyCodeViewModel()),
           ChangeNotifierProvider(create: (_) => SettingsViewModel()),
           ChangeNotifierProvider(create: (_) => AuthViewModel()),
-  
-     
-        ChangeNotifierProvider(create: (_) => ReservationProvider()), 
-        
-        // 2. OrderProvider ƏLAVƏ EDİLMƏLİDİR
-        ChangeNotifierProvider(create: (_) => OrderProvider()),
-        // 2. Tarix, Saat və Masa seçimini idarə edir
-        ChangeNotifierProvider(
-          create: (_) => ReservationProvider(),
-        ),
+          ChangeNotifierProvider(create: (_) => ReservationProvider()),
+          ChangeNotifierProvider(create: (_) => OrderProvider()),
         ],
         child: const MainApp(),
       ),

@@ -3,9 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:hackathon_mobile/src/feature/auth/model/sign%20in/sign_in_response_model.dart'
     show SignInResponse;
 import 'package:provider/provider.dart';
-
-import '../../../core/extension/string_extension.dart';
-import '../../../core/init/lang/languages.dart';
 import '../../../core/init/theme/colors.dart';
 import '../../../core/mixins/navigation_mixin.dart';
 import '../../../core/navigation/navigation_manager.dart';
@@ -15,12 +12,9 @@ import '../model/sign up/sign_up_model.dart';
 import '../view model/auth_view_model.dart';
 import 'widgets/buttons/back_navigation_button.dart';
 import 'widgets/buttons/sign_button.dart';
-import 'widgets/buttons/sign_with_icon_buttons.dart';
 import 'widgets/check_box_list_tiles/checkbox_list_tile.dart';
 import 'widgets/containers/background_image.dart';
 import 'package:flutter/material.dart';
-
-import 'widgets/divider/divider_text.dart';
 import 'widgets/text_fields/password_text_field.dart';
 import 'widgets/text_fields/text_field.dart';
 import 'widgets/texts/custom_text_with_button.dart';
@@ -102,9 +96,7 @@ class _SignUpViewState extends State<SignUpView> with NavigatornMixinStateful {
                                   if (value == null || value.isEmpty) {
                                     return "auth.errors.email_empty".tr();
                                   }
-                                  // if (!value.isValidEmail) {
-                                  //   return "auth.errors.email_invalid".tr();
-                                  // }
+
                                   return null;
                                 },
                               ),
@@ -150,7 +142,6 @@ class _SignUpViewState extends State<SignUpView> with NavigatornMixinStateful {
                                     bool success = false;
                                     String message = "";
 
-                                    // result SignInResponse (success) və ya SignUpErrorResponse (error) ola bilər
                                     if (result != null) {
                                       if (result is SignInResponse) {
                                         success = true;
@@ -163,7 +154,6 @@ class _SignUpViewState extends State<SignUpView> with NavigatornMixinStateful {
                                             result.errorMessage ??
                                             "Unknown error";
                                       } else {
-                                        // Əgər dynamic tip gözlənilməz bir şeydirsə
                                         success = false;
                                         message =
                                             "Unexpected error: Unknown response type";
@@ -178,7 +168,6 @@ class _SignUpViewState extends State<SignUpView> with NavigatornMixinStateful {
                                       debugPrint("signUp returned null");
                                     }
 
-                                    // Snackbar göstərişi
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(message),
@@ -198,21 +187,19 @@ class _SignUpViewState extends State<SignUpView> with NavigatornMixinStateful {
                                       ),
                                     );
 
-                                    // Əgər success-dirsə 1500 ms sonra route
                                     if (success) {
                                       Future.delayed(
                                         const Duration(milliseconds: 1500),
                                         () {
-                                          router.pushAndRemoveUntil(RouteName.home);
+                                          router.pushAndRemoveUntil(
+                                            RouteName.home,
+                                          );
                                         },
                                       );
                                     }
                                   }
                                 },
                               ),
-
-                              // DividerText(text: "auth.sign_up_with".tr()),
-                              // SignWidthIcons(),
 
                               TextWidthButton(
                                 text: "auth.dont_have_account".tr(),

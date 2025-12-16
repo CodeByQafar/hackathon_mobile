@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../core/extension/string_extension.dart';
-import '../../../core/init/lang/languages.dart';
 import '../../../core/init/theme/colors.dart';
 import '../../../core/mixins/navigation_mixin.dart';
 import '../../../core/navigation/navigation_manager.dart';
@@ -25,7 +24,7 @@ class ForgotPasswordView extends StatelessWidget with NavigatornMixinStateless {
     return Scaffold(
       extendBodyBehindAppBar: true,
       extendBody: true,
-       appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: AppColors.black,
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle(
@@ -53,20 +52,18 @@ class ForgotPasswordView extends StatelessWidget with NavigatornMixinStateless {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    // Yuxarı hissədə böyük kilid ikonu
                     Icon(
                       Icons.lock_outline,
                       size: 80,
-                      color: AppColors.cyanBlueAzure, // ana tema rəngi
+                      color: AppColors.cyanBlueAzure,
                     ),
                     const SizedBox(height: 8),
 
-                    // Başlıq
                     Text(
                       "auth.forgot_password".tr(),
                       style: Theme.of(context).textTheme.titleMedium,
                     ),
-                    // Subtitle
+
                     Text(
                       "auth.forgot_password_subtitle".tr(),
                       textAlign: TextAlign.center,
@@ -96,16 +93,14 @@ class ForgotPasswordView extends StatelessWidget with NavigatornMixinStateless {
                           ),
                           const SizedBox(height: 40),
                           SignButton(
-                                                          isLodaing: false,
+                            isLodaing: false,
 
                             message: "buttons.send_reset_link".tr(),
                             isEnabled: true,
                             onPressed: () {
-
                               if (_formKey.currentState?.validate() ?? false) {
                                 router.pushToPage(RouteName.verifyCodeView);
                               }
-
                             },
                           ),
                           const SizedBox(height: 20),

@@ -520,11 +520,11 @@ class HomePage extends StatelessWidget {
     },
     {
       'name': 'Pizza',
-      'image': 'https://images.unsplash.com/photo-1548365328-9f547fb09537'
+      'image': 'https://www.acouplecooks.com/wp-content/uploads/2022/10/Margherita-Pizza-082.jpg'
     },
     {
       'name': 'Kabab',
-      'image': 'https://images.unsplash.com/photo-1604908812284-3b1a3e9a3c0b'
+      'image': 'https://www.chilitochoc.com/wp-content/uploads/2020/07/Bihari-Kabab.jpg'
     },
     {
       'name': 'Pasta',

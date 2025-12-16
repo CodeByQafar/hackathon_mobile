@@ -1,8 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
-import 'package:hackathon_mobile/src/core/init/theme/theme.dart';
-
-import '../../../core/init/lang/languages.dart';
 import '../../../core/init/theme/colors.dart';
 import '../../../core/mixins/navigation_mixin.dart';
 import '../../../core/navigation/navigation_manager.dart';
@@ -14,9 +11,14 @@ import '../../../core/utils/padding.dart';
 import 'widgets/texts/title_text.dart';
 import 'package:flutter/material.dart';
 
-class WelcomeView extends StatelessWidget with NavigatornMixinStateless {
+class WelcomeView extends StatefulWidget  {
   WelcomeView({super.key});
 
+  @override
+  State<WelcomeView> createState() => _WelcomeViewState();
+}
+
+class _WelcomeViewState extends State<WelcomeView> with NavigatornMixinStateful<WelcomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

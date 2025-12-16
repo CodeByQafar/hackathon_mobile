@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../core/cache/cache_service.dart';
 import '../../../core/cache/user_cache.dart';
 import '../model/sign in/sign_in_model.dart';
 import '../model/sign in/sign_in_error_model.dart';
@@ -76,7 +75,7 @@ class AuthViewModel extends ChangeNotifier {
       } else {
         
         final signInResult = await signIn(
-          SignInModel(userNameOrEmail: model.email, password: model.password),
+          SignInModel(userNameOrEmail: model.userName, password: model.password),
         );
         return signInResult;
       }

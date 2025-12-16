@@ -2,8 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/extension/string_extension.dart';
-import '../../../core/init/lang/languages.dart';
 import '../../../core/init/theme/colors.dart';
 
 import '../../../core/mixins/navigation_mixin.dart';
@@ -13,16 +11,13 @@ import '../../../core/utils/padding.dart';
 import '../model/sign in/sign_in_error_model.dart';
 import '../model/sign in/sign_in_model.dart';
 import '../model/sign in/sign_in_response_model.dart';
-import '../model/sign up/sign_up_model.dart';
 import '../view model/auth_view_model.dart';
 import 'widgets/buttons/back_navigation_button.dart';
 import 'widgets/buttons/sign_button.dart';
-import 'widgets/buttons/sign_with_icon_buttons.dart';
 import 'widgets/check_box_list_tiles/checkbox_list_tile.dart';
 import 'widgets/containers/background_image.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/divider/divider_text.dart';
 import 'widgets/text_fields/password_text_field.dart';
 import 'widgets/text_fields/text_field.dart';
 import 'widgets/texts/custom_text_with_button.dart';

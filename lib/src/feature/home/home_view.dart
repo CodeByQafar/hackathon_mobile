@@ -29,13 +29,6 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0,
-      //   backgroundColor: Colors.red,
-      //   centerTitle: true,
-      //   automaticallyImplyLeading: false,
-      // ),
-
       body: _pages[_currentIndex],
 
       bottomNavigationBar: BottomNavigationBar(

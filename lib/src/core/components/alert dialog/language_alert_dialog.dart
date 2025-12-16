@@ -77,7 +77,7 @@ void showLanguageSelectionDialog(BuildContext context) {
                         : null,
                     onTap: () {
                       context.setLocale(language.locale);
-                      
+
                     },
                   ),
                 ),

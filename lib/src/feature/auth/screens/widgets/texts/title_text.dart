@@ -1,4 +1,3 @@
-import '../../../../../core/init/lang/languages.dart';
 import 'package:flutter/material.dart';
 
 class TitleText extends StatelessWidget {
