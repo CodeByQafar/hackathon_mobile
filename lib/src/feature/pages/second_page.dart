@@ -3,17 +3,17 @@ import 'package:hackathon_mobile/src/feature/pages/home_page.dart';
 import 'package:hackathon_mobile/src/feature/pages/third_page.dart';
 import 'package:provider/provider.dart';
 
-// Rezervasiya və Sifariş Provider/Model importları buraya daxil edilməlidir
+
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
 
-  // --- Yardımçı Widget-lər ---
+  
 
-  // Başlıqlar üçün köməkçi metod
+  
   Widget _buildTitle(ThemeData theme, String title, Color color) {
-    // Burada emoji silindi və rəng parametrlə gəlməyə davam edir, lakin 
-    // aşağıda çağırışda Theme rəngləri istifadə olunacaq.
+    
+    
     return Padding(
       padding: const EdgeInsets.only(bottom: 12.0, top: 8),
       child: Text(
@@ -26,7 +26,7 @@ class SecondPage extends StatelessWidget {
     );
   }
 
-  // Rezervasiya məlumatlarını göstərən metod
+  
   Widget _buildReservationDetails(
       ThemeData theme, ReservationModel reservation) {
     return Column(
@@ -45,7 +45,7 @@ class SecondPage extends StatelessWidget {
     );
   }
 
-  // Sifariş məlumatlarını göstərən metod
+  
   Widget _buildOrderDetails(ThemeData theme, OrderModel order) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,10 +58,10 @@ class SecondPage extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           "Items (${order.items.length}):",
-          // Theme'dən gələn əsas rənglərdən istifadə etmək
+          
           style: theme.textTheme.bodyLarge?.copyWith(
             fontWeight: FontWeight.bold,
-            color: theme.colorScheme.onSurface, // Əsas yazı rəngi
+            color: theme.colorScheme.onSurface, 
           ),
         ),
         ...order.items
@@ -70,7 +70,7 @@ class SecondPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 8.0, top: 4),
                 child: Text(
                   '${item.quantity}x ${item.name} (\$${(item.price * item.quantity).toStringAsFixed(2)})',
-                  style: theme.textTheme.bodyMedium, // Theme'dən gələn bodyMedium rəngi
+                  style: theme.textTheme.bodyMedium, 
                 ),
               ),
             )
@@ -79,7 +79,7 @@ class SecondPage extends StatelessWidget {
     );
   }
 
-  // Detalları bir cərgədə göstərən universal metod
+  
   Widget _buildDetailRow(
       ThemeData theme, String label, String value, IconData icon) {
     return Padding(
@@ -87,14 +87,14 @@ class SecondPage extends StatelessWidget {
       child: Row(
     crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Icon rəngini Theme'in primary rənginə uyğunlaşdırırıq
+          
           Icon(icon, size: 18, color: theme.colorScheme.primary),
           const SizedBox(width: 8),
           Text(
             label,
             style: theme.textTheme.bodyLarge?.copyWith(
               color: theme.textTheme.displaySmall!.color,
-            ), // Theme'dən gələn bodyLarge rəngi
+            ), 
           ),
           const SizedBox(width: 8),
           Flexible(
@@ -128,7 +128,7 @@ color: theme.textTheme.displaySmall!.color,
           mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-            Icon(Icons.info_outline, size: 50, color: theme.colorScheme.secondary), // Rəng dəyişdirildi
+            Icon(Icons.info_outline, size: 50, color: theme.colorScheme.secondary), 
             const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -148,7 +148,7 @@ color: theme.textTheme.displaySmall!.color,
       );
     }
 
-    // 2. Məlumat olduqda Card-ı göstər
+    
     return Scaffold(
       appBar: AppBar(
         title:  Text("Your Status" ,style: Theme.of( context).textTheme.titleMedium),
@@ -159,7 +159,7 @@ color: theme.textTheme.displaySmall!.color,
         padding: const EdgeInsets.all(16),
         child: Card(
           elevation: 4,
-          // Kartın fon rəngi avtomatik Theme-də təyin olunmuş cardColor/surface rəngini götürəcək
+          
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -170,7 +170,7 @@ color: theme.textTheme.displaySmall!.color,
                   _buildTitle(
                     theme, 
                     "Latest Reservation", 
-                    theme.colorScheme.primary, // Theme'in əsas rəngi
+                    theme.colorScheme.primary, 
                   ),
                   _buildReservationDetails(theme, reservation),
                   if (order != null) const Divider(height: 30),
@@ -179,7 +179,7 @@ color: theme.textTheme.displaySmall!.color,
                   _buildTitle(
                     theme, 
                     "Latest Order", 
-                    theme.colorScheme.primary, // Theme'in əsas rəngi (və ya secondary istifadə edə bilərsiniz)
+                    theme.colorScheme.primary, 
                   ),
                   _buildOrderDetails(theme, order),
                 ],

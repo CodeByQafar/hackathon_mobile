@@ -81,5 +81,15 @@
   "basket": {
     "items_count": "{count} items",
     "add_to_basket": "Add to Basket"
+  },
+
+  "payment": {
+    "pay_order": "Pay Order",
+    "card_title": "Card Payment",
+    "card_number": "Card Number",
+    "card_holder": "Card Holder Name",
+    "expiry_date": "Expiry Date",
+    "cvv": "CVV",
+    "pay": "Pay"
   }
 }
