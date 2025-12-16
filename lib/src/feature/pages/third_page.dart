@@ -286,6 +286,8 @@ class ReservationPage extends StatelessWidget {
                 child: Text(
                   'Confirm Reservation',
                   style: theme.textTheme.titleSmall?.copyWith(
+                    
+                        fontSize: 24,
                     color: provider.isComplete
                         ? theme.colorScheme.onPrimary
                         : theme.colorScheme.onSurface.withOpacity(0.38),

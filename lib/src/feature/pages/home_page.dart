@@ -724,6 +724,7 @@ class BasketPage extends StatelessWidget {
                     'Create Order',
                     style: theme.textTheme.titleMedium?.copyWith(
                       color: theme.colorScheme.onPrimary,
+                      fontSize: 36
                     ),
                   ),
                 ),
