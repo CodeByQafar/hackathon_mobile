@@ -32,7 +32,7 @@ void main() async {
     EasyLocalization(
       supportedLocales: const [Locale('en'), Locale('az'), Locale('tr')],
       path: 'assets/lang',
-      fallbackLocale: const Locale('az'),
+      fallbackLocale: const Locale('en'),
       child: MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => VerifyCodeViewModel()),
